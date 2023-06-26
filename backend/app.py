@@ -113,6 +113,11 @@ class SongResource(Resource):
         db.session.commit()
         return '', 204
 
+class TestResource(Resource):
+    def get(self):
+        return "Test Successful
+    "
 # Creating routes
 api.add_resource(SongListResource, '/api/songs')
 api.add_resource(SongResource, '/api/songs/<int:song_id>')
+api.add_resource(TestResource, 'api/test')
